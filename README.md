@@ -4,20 +4,16 @@ A two-player arcade game built with OpenCV where players control snakes, avoid c
 
 ## Setup 🛠️
 
-1. **Install Python** (3.6+ recommended).
+1. **Install Python** (3.10+ recommended).
 2. **Install OpenCV**:
    ```bash
    pip install opencv-python
    ```
-3. **Download Files**:
-   - Save `blockade_snake.py` to a folder.
-   - Add these images to the same folder:
-     - `background.jpg` (game background)
-     - `red_player.png` (red snake sprite)
-     - `blue_player.png` (blue snake sprite)
+3. **Clone the repo**:
+   `git clone git clone https://github.com/siyovush-hamidov/snake-arcade-game`
 4. **Run the Game**:
    ```bash
-   python blockade_snake.py
+   python snake_arcade_game.py
    ```
 
 ## How to Play 🎮
