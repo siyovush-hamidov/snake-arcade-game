@@ -12,6 +12,9 @@ directions = {
     "RIGHT": (CELL_SIZE, 0)
 }
 
+# Нужно вынести в отдельный класс Змею и используя его объект, строить логику игры
+# Использовать не solid картинки для объектов 
+
 class BlockadeGame:
     def __init__(self):
         self.players = {
@@ -87,11 +90,6 @@ class BlockadeGame:
     def draw(self, frame):
         frame[:] = self.background.copy()
         
-        for player, trail in self.trails.items():
-            color = (0, 0, 255) if player == "RED" else (255, 0, 0)
-            for start, end in trail:
-                cv2.line(frame, start, end, color, 2)
-        
         for player, segments in self.players.items():
             player_img = self.red_player_img if player == "RED" else self.blue_player_img
             for segment in segments:
@@ -113,9 +111,7 @@ class BlockadeGame:
         return frame
 
 def show_start_screen():
-    frame = cv2.imread('background.jpg')
-    if frame is None:
-        frame = np.zeros((HEIGHT, WIDTH, 3), dtype=np.uint8)
+    frame = np.zeros((HEIGHT, WIDTH, 3), dtype=np.uint8)
     frame = cv2.resize(frame, (WIDTH, HEIGHT))
     text = [
         "THIS IS A SURVIVAL GAME FOR TWO PLAYERS",
